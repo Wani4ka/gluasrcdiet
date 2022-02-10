@@ -70,6 +70,6 @@ overall, the code is 36% shorter (807 chars vs. 509), but it'll be much more res
 also, pay attention to some lines that became really times shorter:
 | before | after | comments |
 |--------|-------|----------|
-| `lua if not myFunc(i) or not myFunc(i * 3) or (i > 3 and i < 10) then` | `if!o(e)\|\|!o(e*3)\|\|(e>3&&e<10)then` | **(51.6%)** using c-styled logical operators, you will be able not to place any spaces at all, gmod accepts it
+| `if not myFunc(i) or not myFunc(i * 3) or (i > 3 and i < 10) then` | `if!o(e)\|\|!o(e*3)\|\|(e>3&&e<10)then` | **(51.6%)** using c-styled logical operators, you will be able not to place any spaces at all, gmod accepts it
 | `local superLongButUseless1, superLongButUseless2, superLongButUseful3 = 0, 0, 0` | `local e,e,n=0,0,0` | **(21.5%)** (luasrcdiet feature) renames local variables to as short as possible
 | `local var2 = {  pos = Vector(0, 0, 0),  ang = Angle(45, 0, 2),  data = {   msg1 = 'example',   msg2 = 'cozy',  }, }` | `local e={pos=Vector(0,0,0),ang=Angle(45,0,2),data={msg1='example',msg2='cozy'}}` | **(68.7%)** renamed table, removed whitespaces and *trailing commas* (there could be pretty enough in large config tables)
